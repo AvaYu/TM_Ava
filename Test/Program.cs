@@ -34,16 +34,7 @@ namespace TM_Ava
             DeleteTest deleteRecord = new DeleteTest();
             deleteRecord.DeleteRecord();
 
-
-
-
-
-
-
-
-
-
-
-        }
+			CommonDriver.driver.Close();
+		}
     }
 }
