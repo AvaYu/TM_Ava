@@ -28,6 +28,11 @@ namespace TM_Ava
 			// Login object and logging in to turnup
 			LoginTest loginPage = new LoginTest();
 			loginPage.LoginSteps();
+
+			//homePage object and navigating to TM page
+			HomePage homePage = new HomePage();
+			homePage.navigateTM();
+
 		}
 		
 		[Test]
