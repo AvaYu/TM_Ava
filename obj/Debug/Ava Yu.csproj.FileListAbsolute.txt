@@ -1,0 +1,4 @@
+C:\Users\A&S\source\repos\Ava Yu\Ava Yu\obj\Debug\Ava Yu.csprojAssemblyReference.cache
+C:\Users\A&S\source\repos\Ava Yu\Ava Yu\obj\Debug\Ava Yu.csproj.CoreCompileInputs.cache
+C:\Users\A&S\source\repos\Ava Yu\Ava Yu\obj\Debug\Login_Ava.exe
+C:\Users\A&S\source\repos\Ava Yu\Ava Yu\obj\Debug\Login_Ava.pdb

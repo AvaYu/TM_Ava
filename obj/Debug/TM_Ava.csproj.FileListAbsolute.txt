@@ -1,0 +1,10 @@
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\obj\Debug\TM_Ava.csprojAssemblyReference.cache
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\obj\Debug\TM_Ava.csproj.CoreCompileInputs.cache
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\WebDriver.dll
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\WebDriver.xml
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\obj\Debug\TM_Ava.csproj.CopyComplete
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\TM_Ava.exe.config
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\TM_Ava.exe
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\TM_Ava.pdb
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\obj\Debug\TM_Ava.exe
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\obj\Debug\TM_Ava.pdb

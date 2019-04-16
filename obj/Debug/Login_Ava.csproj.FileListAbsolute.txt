@@ -1,0 +1,10 @@
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\bin\Debug\Login_Ava.exe.config
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\bin\Debug\Login_Ava.exe
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\bin\Debug\Login_Ava.pdb
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\bin\Debug\WebDriver.dll
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\bin\Debug\WebDriver.xml
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\obj\Debug\Login_Ava.csprojAssemblyReference.cache
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\obj\Debug\Login_Ava.csproj.CoreCompileInputs.cache
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\obj\Debug\Login_Ava.csproj.CopyComplete
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\obj\Debug\Login_Ava.exe
+C:\Users\A&S\source\repos\Login_Ava\Login_Ava\obj\Debug\Login_Ava.pdb
