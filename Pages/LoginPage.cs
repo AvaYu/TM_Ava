@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace TM_Ava.Pages
 {
     class LoginTest
     {
+		private readonly object ExpectedConditions;
+		
         public void LoginSteps()
         {
             // Launch the URL
@@ -24,23 +27,23 @@ namespace TM_Ava.Pages
             IWebElement password = CommonDriver.driver.FindElement(By.Id("Password"));
             password.SendKeys("123123");
 
-            // Click the Login Button
-            IWebElement loginButton = CommonDriver.driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
-            loginButton.Click();
-
-            // Verify if you are on the homescreen
-            CommonDriver.driver.Manage().Window.Maximize();
-
-            // Identify 'hello hari'
-            IWebElement helloHomepage = CommonDriver.driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
-
-            if (helloHomepage.Text == "Hello hari!")
-            {
-                Console.WriteLine("Hello hari displayed, Test LoginPage Passed");
-            }
-			else
+			try
 			{
-				Console.WriteLine("Text didn't match, Test LoginPage Failed");
+				// Click the Login Button
+				IWebElement loginButton = CommonDriver.driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
+				loginButton.Click();
+
+				// Verify if you are on the homescreen
+				CommonDriver.driver.Manage().Window.Maximize();
+
+				// Identify 'hello hari'
+				IWebElement helloHomepage = CommonDriver.driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
+
+				Assert.That(helloHomepage.Text, Is.EqualTo("Hello hari!"));
+			}
+			catch(Exception e)
+			{
+				Console.WriteLine("Error occured while launching the homepage",e.Message);
 			}
         }
     }

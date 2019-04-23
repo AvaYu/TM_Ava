@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\CommonDriver.cs" />
+    <Compile Include="Helpers\TMHelpers.cs" />
+    <Compile Include="Helpers\Wait.cs" />
     <Compile Include="Pages\CreateRecord.cs" />
     <Compile Include="Pages\DeleteRecord.cs" />
     <Compile Include="Pages\EditRecord.cs" />

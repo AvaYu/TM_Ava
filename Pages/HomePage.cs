@@ -17,7 +17,8 @@ namespace TM_Ava.Pages
 			CommonDriver.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a")).Click();
 			CommonDriver.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a")).Click();
 
-			Thread.Sleep(1000);
+			// Wait 1 second
+			Wait.waituntil(CommonDriver.driver, 1, "//*[@id='container']/p/a", "XPath");
 		}
 	}
 }
