@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,56 +13,61 @@ using TM_Ava.Pages;
 namespace TM_Ava
 {
 	[TestFixture]
-	class Program
-    {
-        static void Main(string[] args)
+	[Parallelizable(ParallelScope.All)]
+	public class Program
+	{
+
+		static void Main(string[] args)
 		{
+
 		}
+		private IWebDriver driver;
 
 		[SetUp]
-		public void setup()
+		public void Setup()
 		{
-			// Define driver
-			CommonDriver.driver = new ChromeDriver();
+			//defining driver
+			driver = new ChromeDriver();
 
-			// Login object and logging in to turnup
-			LoginTest loginPage = new LoginTest();
+			ExcelHelpers.PopulateInCollection(@"C:\Users\A&S\source\repos\AvaYu\TM_Ava\Data\TestData.xlsx", "Data");
+
+			//login object and logging in to TurnUp
+			LoginPage loginPage = new LoginPage(driver);
 			loginPage.LoginSteps();
 
 			//homePage object and navigating to TM page
-			HomePage homePage = new HomePage();
+			HomePage homePage = new HomePage(driver);
 			homePage.navigateTM();
-
-		}
-		
-		[Test]
-		public void testCreateTM()
-		{
-			// CreateRecord object 
-			CreateTest createRecord = new CreateTest();
-			createRecord.CreateRecord();
 		}
 
 		[Test]
-		public void testEditTM()
+		public void CreateTM()
 		{
-			// EditRecord object
-			EditTest editRecord = new EditTest();
-			editRecord.EditRecord();
+			var tmPage = new TMPage(driver);
+			tmPage.CreateTM();
+			tmPage.ValidateTM();
 		}
 
 		[Test]
-		public void testDeleteTM()
+		public void EditTM()
 		{
-			// DeleteRecord object
-			DeleteTest deleteRecord = new DeleteTest();
-			deleteRecord.DeleteRecord();
+			//TMpage object and editing an existing record
+			TMPage tmPage = new TMPage(driver);
+			tmPage.EditTM();
+		}
+
+		[Test]
+		public void DeleteTM()
+		{
+			var tmPage = new TMPage(driver);
+			tmPage.DeleteTM();
 		}
 
 		[TearDown]
-		public void tearDown()
+		public void TearDown()
 		{
-			CommonDriver.driver.Close();
+			driver.Close();
 		}
+
 	}
 }

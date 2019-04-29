@@ -11,14 +11,20 @@ namespace TM_Ava.Pages
 {
 	class HomePage
 	{
+		IWebDriver driver;
+		public HomePage(IWebDriver driver)
+		{
+			this.driver = driver;
+		}
+
 		public void navigateTM()
 		{
 			//Navigate to TM page
-			CommonDriver.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a")).Click();
-			CommonDriver.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a")).Click();
+			driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a")).Click();
+			driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a")).Click();
 
 			// Wait 1 second
-			Wait.waituntil(CommonDriver.driver, 1, "//*[@id='container']/p/a", "XPath");
+			Wait.waituntil(driver, 1, "//*[@id='container']/p/a", "XPath");
 		}
 	}
 }

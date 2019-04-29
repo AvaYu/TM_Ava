@@ -10,34 +10,46 @@ using TM_Ava.Helpers;
 
 namespace TM_Ava.Pages
 {
-    class LoginTest
+    class LoginPage
     {
-		private readonly object ExpectedConditions;
-		
-        public void LoginSteps()
+		private IWebDriver driver;
+
+		public LoginPage(IWebDriver driver)
+		{
+			this.driver = driver;
+		}
+
+		IWebElement username => driver.FindElement(By.Id("UserName"));
+		IWebElement password => driver.FindElement(By.Id("Password"));
+
+
+		public void LoginSteps()
         {
             // Launch the URL
-            CommonDriver.driver.Navigate().GoToUrl("http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f");
+            //driver.Navigate().GoToUrl("http://horse-dev.azurewebsites.net/Account/Login?ReturnUrl=%2f");
+			driver.Navigate().GoToUrl(ExcelHelpers.ReadData(2, "URL"));
 
-            // Enter Valid Username
-            IWebElement username = CommonDriver.driver.FindElement(By.Id("UserName"));
-            username.SendKeys("hari");
+			// Enter Valid Username
+			//IWebElement username = driver.FindElement(By.Id("UserName"));
+			//username.SendKeys("hari");
+			username.SendKeys(ExcelHelpers.ReadData(2, "Username"));
 
-            // Enter Valid Password
-            IWebElement password = CommonDriver.driver.FindElement(By.Id("Password"));
-            password.SendKeys("123123");
+			// Enter Valid Password
+			//IWebElement password = driver.FindElement(By.Id("Password"));
+			//password.SendKeys("123123");
+			password.SendKeys(ExcelHelpers.ReadData(2, "Password"));
 
 			try
 			{
 				// Click the Login Button
-				IWebElement loginButton = CommonDriver.driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
+				IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
 				loginButton.Click();
 
 				// Verify if you are on the homescreen
-				CommonDriver.driver.Manage().Window.Maximize();
+				driver.Manage().Window.Maximize();
 
 				// Identify 'hello hari'
-				IWebElement helloHomepage = CommonDriver.driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
+				IWebElement helloHomepage = driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
 
 				Assert.That(helloHomepage.Text, Is.EqualTo("Hello hari!"));
 			}
