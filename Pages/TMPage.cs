@@ -23,11 +23,6 @@ namespace TM_Ava.Pages
 		{
 			TMHelpers.AddTM(driver, "as1", "as1", "111");
 
-			//// Wait 1 second
-			//Wait.waituntil(driver, 1, "//*[@id='tmsGrid']/div[4]/a[4]/span", "XPath");
-
-			//// Go to the last page
-			//driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
 
 			//// Wait 1 second 
 			//Wait.waituntil(driver, 1, "#tmsGrid > div.k-grid-content > table > tbody > tr:last-child > td:nth-child(1)", "CssSelector");
@@ -40,19 +35,30 @@ namespace TM_Ava.Pages
 		internal void ValidateTM()
 		{
 			Thread.Sleep(2000);
+			// Wait at most 2 seconds for a record to be visible
+			//Wait.waituntil(driver, 2, "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]", "XPath");
+
+			// Go to the last page
+			driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
+
+			// Click previous page button
+			driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[2]")).Click();
 
 			while (true)
 			{
-				for (var i = 1; i <= 10; i++)
+				for (int i = 1; i <= 10; i++)
 				{
 					var elementText = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[" + i + "]/td[1]")).Text;
 					if (elementText == "as1")
 					{
-						Console.WriteLine("Test Passed"); 
+						// Verify if find the record successfully
+						Assert.That(true);
 						return;
 					}
 				}
-				driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[3]/span")).Click();
+
+				// Click next page button
+				driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[3]")).Click();
 			}
 		}
 

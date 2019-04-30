@@ -34,7 +34,7 @@ namespace TM_Ava.Helpers
 			driver.FindElement(By.XPath("//*[@id='SaveButton']")).Click();
 
 			// Wait 1 second 
-			Wait.waituntil(driver, 1, "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", "XPath");
+			//Wait.waituntil(driver, 1, "//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]", "XPath");
 		}		
 
 		public static void ChangeRecordTM(IWebDriver driver, string code, string description, string price)
