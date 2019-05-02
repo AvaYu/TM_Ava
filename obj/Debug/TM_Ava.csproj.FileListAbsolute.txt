@@ -21,3 +21,5 @@ C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\ExcelDataReader.pdb
 C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\ExcelDataReader.xml
 C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\ExcelDataReader.DataSet.pdb
 C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\RestSharp.dll
+C:\Users\A&S\source\repos\AvaYu\TM_Ava\bin\Debug\RestSharp.xml
